@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Table and Login Form</title>
+</head>
+<body>
+   
+    <table class="table table-dark table-striped-columns">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>Mayank Sharma</td>
+      <td>mayank@gmail.com</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>Akash</td>
+      <td>akash@gmail.com</td>
+      <td>30</td>
+    </tr>
+    
+      <tr>
+        <td>Harshit</td>
+        <td>harshit@gmail.com</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>vscode</td>
+        <td>vs@gmail.com</td>
+        <td>30</td>
+      </tr>
+  </table>
+
+  <div class="login-form">
+    <h2>Login</h2>
+    <form action="login.php" method="post">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>
