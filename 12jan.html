@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #c3e1ee;
+        }
+
+        #gallery-container {
+            position: relative;
+        }
+
+        #gallery-image {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+            margin: auto;
+            border: 2px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #prev-btn,
+        #next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            color: #333;
+        }
+
+        #prev-btn {
+            left: 20px;
+        }
+
+        #next-btn {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+
+<div id="gallery-container">
+    <img id="gallery-image" src="" alt="Image">
+    <button id="prev-btn">&lt;</button>
+    <button id="next-btn">&gt;</button>
+</div>
+
+<script>
+    const images = [
+        'https://i.pinimg.com/736x/e8/31/27/e83127c035435b96a0e4be8e861ab113.jpg',
+        'https://i.pinimg.com/736x/d6/a6/92/d6a692fc1e0489955e2b4ed4ae742c76.jpg',
+        'https://c4.wallpaperflare.com/wallpaper/974/565/254/windows-11-windows-10-minimalism-hd-wallpaper-preview.jpg',
+        'https://www.shutterstock.com/image-photo/4k-nature-background-wallpaper-pc-260nw-2328030343.jpg'
+    ];
+
+    let currentIndex = 0;
+    const galleryImage = document.getElementById('gallery-image');
+    const prevButton = document.getElementById('prev-btn');
+    const nextButton = document.getElementById('next-btn');
+
+    function showImage(index) {
+        galleryImage.src = images[index];
+    }
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    function showPrevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+
+    prevButton.addEventListener('click', showPrevImage);
+    nextButton.addEventListener('click', showNextImage);
+
+    
+    showImage(currentIndex);
+</script>
+
+</body>
+</html>
